@@ -1,0 +1,12 @@
+{
+  "name": "gtm-toolkit",
+  "version": "1.0.0",
+  "description": "GTM list building, data enrichment, and research workflows. Scrape websites, enrich prospects, and build targeted lists.",
+  "author": {
+    "name": "Syft Data"
+  },
+  "repository": "https://github.com/syftdata/gtm-toolkit",
+  "license": "MIT",
+  "keywords": ["gtm", "sales", "prospecting", "enrichment", "scraping", "list-building"],
+  "skills": "./skills/"
+}
