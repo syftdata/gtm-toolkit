@@ -1,7 +1,11 @@
 ---
 name: api-scraper
 description: Scrape data from websites by inspecting and calling their frontend APIs. Use when asked to "scrape", "fetch data from", "extract data from", "get all X from" a website URL. Automatically discovers API endpoints, fetches data, and outputs JSON or CSV.
+license: MIT
 allowed-tools: Read, Write, Bash(python:*), Grep
+metadata:
+  author: syftdata
+  version: "1.0"
 ---
 
 # API Scraper

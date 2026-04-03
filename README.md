@@ -1,12 +1,26 @@
 # GTM Toolkit
 
-A Claude Code plugin for GTM (Go-to-Market) workflows: list building, data enrichment, and prospect research.
+GTM (Go-to-Market) skills for AI agents: list building, data enrichment, and prospect research.
+
+Skills follow the [Agent Skills](https://agentskills.io/specification) open standard and work with Claude Code, Codex, and any compatible agent.
 
 ## Installation
+
+### Claude Code (plugin)
 
 ```bash
 claude plugin add gtm-toolkit
 ```
+
+### Codex + Claude Code (symlinks)
+
+```bash
+git clone <this-repo> ~/skills/gtm-toolkit
+cd ~/skills/gtm-toolkit
+./install.sh
+```
+
+This symlinks all skills into `~/.claude/skills/` and `~/.agents/skills/`.
 
 ## Skills
 
@@ -14,30 +28,30 @@ claude plugin add gtm-toolkit
 
 Scrape data from websites by reverse-engineering their frontend API calls.
 
-**Trigger phrases:**
-- "Scrape all companies from [URL]"
-- "Fetch data from [URL]"
-- "Extract all [items] from [URL]"
-- "Get all X from [website]"
+**Triggers:** "Scrape all X from [URL]", "Fetch data from [URL]", "Extract all [items] from [URL]"
 
 **Example:**
 ```
 Scrape all YC companies from https://www.ycombinator.com/companies
 ```
 
-**Output:** JSON or CSV file with extracted data.
+**Requires:** Chrome DevTools MCP (see below)
+
+### linkedin-profile-enrich
+
+Find LinkedIn profiles for a list of people in a CSV using Vertex AI Search + Gemini Flash ranking.
+
+**Triggers:** "Find LinkedIn profiles for this CSV", "Enrich this list with LinkedIn URLs"
+
+**Requires:** GCP Application Default Credentials, Vertex AI Search engine indexed on linkedin.com
 
 ## Requirements
 
-### Chrome DevTools MCP
-
-This plugin requires Chrome DevTools MCP for browser automation and API inspection.
-
-**Setup:**
+### Chrome DevTools MCP (for api-scraper)
 
 1. Use Chrome M144+ (Beta or newer)
 2. Enable remote debugging at `chrome://inspect/#remote-debugging`
-3. Add to your Claude Code MCP config (`~/.claude.json`):
+3. Add to your MCP config (`~/.claude.json`):
 
 ```json
 {
@@ -50,14 +64,10 @@ This plugin requires Chrome DevTools MCP for browser automation and API inspecti
 }
 ```
 
-4. Authorize Claude when prompted
-
-**Note:** Uses your existing browser session - you stay logged in to all your sites.
-
 ## Roadmap
 
-- [ ] LinkedIn enrichment
-- [ ] Company data enrichment
+- [x] api-scraper
+- [x] linkedin-profile-enrich
 - [ ] Email finder
 - [ ] CRM export workflows
 - [ ] Clay-like waterfall enrichment
