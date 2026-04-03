@@ -1,12 +1,12 @@
 {
   "name": "gtm-toolkit",
+  "description": "GTM skills for AI agents: website scraping, LinkedIn enrichment, and prospect research.",
   "version": "1.0.0",
-  "description": "GTM list building, data enrichment, and research workflows. Scrape websites, enrich prospects, and build targeted lists.",
   "author": {
-    "name": "Syft Data"
+    "name": "syftdata"
   },
+  "homepage": "https://github.com/syftdata/gtm-toolkit",
   "repository": "https://github.com/syftdata/gtm-toolkit",
   "license": "MIT",
-  "keywords": ["gtm", "sales", "prospecting", "enrichment", "scraping", "list-building"],
-  "skills": "./skills/"
+  "keywords": ["gtm", "scraping", "linkedin", "enrichment", "sales", "prospecting"]
 }

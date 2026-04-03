@@ -1,0 +1,13 @@
+{
+  "name": "gtm-toolkit",
+  "description": "GTM Toolkit Plugin Marketplace",
+  "owner": {
+    "name": "syftdata"
+  },
+  "plugins": [
+    {
+      "name": "gtm-toolkit",
+      "source": "./"
+    }
+  ]
+}
